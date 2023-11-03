@@ -1,21 +1,34 @@
 import { styled } from "styled-components";
 import Navigation from "./components/navigation/Navigation";
 import { MainLayout } from "./styles/layouts";
-import { useState, useMemo } from "react";
-import Orb from "./components/orb/Orb";
+import { useState } from "react";
+import Dashboard from "./components/dashboard/Dashboard";
+import Income from "./components/income/Income";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
   const [active, setActive] = useState(1);
 
-  const orbMemo = useMemo(() => {
-    return <Orb />;
-  }, []);
+  const displayData = () => {
+    switch (active) {
+      case 1:
+        return <Dashboard />;
+      case 2:
+        return <Dashboard />;
+      case 3:
+        return <Income />;
+      case 4:
+        return <Expenses />;
+      default:
+        return <Dashboard />;
+    }
+  };
 
   return (
     <AppStyled>
-      {orbMemo}
       <MainLayout>
         <Navigation active={active} setActive={setActive} />
+        <main>{displayData()}</main>
       </MainLayout>
     </AppStyled>
   );
