@@ -87,7 +87,7 @@ function Form() {
         <textarea
           name="description"
           value={description}
-          placeholder="Add A Reference"
+          placeholder="Add A Description"
           id="description"
           cols="30"
           rows="4"
