@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { dateFormat } from "../../utils/dateFormat";
 import {
@@ -17,7 +16,6 @@ import {
   takeaway,
   trash,
   tv,
-  users,
 } from "../../utils/Icons";
 import Button from "../Button/Button";
 
@@ -68,7 +66,17 @@ function IncomeItem({
     }
   };
 
-  console.log("type", type);
+  const handleDeleteItem = () => {
+    // Show a confirmation pop-up
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
+
+    if (confirmDelete) {
+      // If the user confirms, call the deleteItem function
+      deleteItem(id);
+    }
+  };
 
   return (
     <IncomeItemStyled indicator={indicatorColor}>
@@ -90,16 +98,16 @@ function IncomeItem({
               {description}
             </p>
           </div>
-          <div className="btn-con">
+          <div>
             <Button
               icon={trash}
-              bPad={"1rem"}
+              bPad={".8rem"}
               bRad={"50%"}
               bg={"var(--color-delete"}
               color={"#fff"}
               iColor={"#fff"}
               hColor={"var(--color-green)"}
-              onClick={() => deleteItem(id)}
+              onClick={() => handleDeleteItem(id)}
             />
           </div>
         </div>
@@ -121,7 +129,7 @@ const IncomeItemStyled = styled.div`
   width: 100%;
   color: #222260;
   .icon {
-    width: 80px;
+    width: 90px;
     height: 80px;
     border-radius: 20px;
     background: #f5f5f5;
@@ -129,6 +137,7 @@ const IncomeItemStyled = styled.div`
     align-items: center;
     justify-content: center;
     border: 2px solid #ffffff;
+    gap: 0.2rem;
     i {
       font-size: 2.6rem;
     }

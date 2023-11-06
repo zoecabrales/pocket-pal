@@ -28,7 +28,7 @@ export const GlobalProvider = ({ children }) => {
   };
 
   const deleteIncome = async (id) => {
-    const res = await axios.delete(`${BASE_URL}delete-income/${id}`);
+    const res = await axios.delete(`${BASE_URL}del-income/${id}`);
     getIncomes();
   };
 
