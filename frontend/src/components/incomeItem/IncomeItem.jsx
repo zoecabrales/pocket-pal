@@ -2,25 +2,22 @@ import React from "react";
 import styled from "styled-components";
 import { dateFormat } from "../../utils/dateFormat";
 import {
-  bitcoin,
   book,
   calender,
   card,
   circle,
   clothing,
   comment,
-  dollar,
   food,
   freelance,
   medical,
   money,
+  peso,
   piggy,
-  stocks,
   takeaway,
   trash,
   tv,
   users,
-  yt,
 } from "../../utils/Icons";
 import Button from "../Button/Button";
 
@@ -83,7 +80,7 @@ function IncomeItem({
         <div className="inner-content">
           <div className="text">
             <p>
-              {dollar} {amount}
+              {peso} {amount}
             </p>
             <p>
               {calender} {dateFormat(date)}
@@ -98,7 +95,7 @@ function IncomeItem({
               icon={trash}
               bPad={"1rem"}
               bRad={"50%"}
-              bg={"var(--primary-color"}
+              bg={"var(--color-delete"}
               color={"#fff"}
               iColor={"#fff"}
               hColor={"var(--color-green)"}
