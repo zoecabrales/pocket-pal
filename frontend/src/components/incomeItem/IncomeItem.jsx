@@ -103,10 +103,10 @@ function IncomeItem({
               icon={trash}
               bPad={"1rem"}
               bRad={"50%"}
-              bg={"var(--primary-color"}
+              bg={{ color: "black" }}
               color={"#fff"}
               iColor={"#fff"}
-              hColor={"var(--color-green)"}
+              hColor={"var(--color--delete)"}
               onClick={() => handleDeleteItem(id)}
             />
           </div>
@@ -118,27 +118,28 @@ function IncomeItem({
 
 const IncomeItemStyled = styled.div`
   background: #fcf6f9;
-  border: 2px solid #ffffff;
-  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-  border-radius: 20px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border: 1px solid #ffffff; /* Reduced border thickness */
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.06); /* Reduced box shadow */
+  border-radius: 10px; /* Reduced border radius */
+  padding: 0.5rem; /* Reduced padding */
+  margin-bottom: 0.5rem; /* Reduced margin */
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem; /* Reduced gap */
   width: 100%;
-  color: #222260;
+  color: var(--primary-color); /* Bright orange */
+
   .icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
+    width: 60px; /* Reduced width */
+    height: 60px; /* Reduced height */
+    border-radius: 10px; /* Reduced border radius */
     background: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff; /* Reduced border thickness */
     i {
-      font-size: 2.6rem;
+      font-size: 2rem; /* Reduced font size */
     }
   }
 
@@ -146,10 +147,11 @@ const IncomeItemStyled = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.1rem; /* Reduced gap */
+
     h5 {
-      font-size: 1.3rem;
-      padding-left: 2rem;
+      font-size: 1rem; /* Reduced font size */
+      padding-left: 1rem; /* Reduced padding */
       position: relative;
       &::before {
         content: "";
@@ -157,10 +159,10 @@ const IncomeItemStyled = styled.div`
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        width: 0.8rem;
-        height: 0.8rem;
+        width: 0.6rem; /* Reduced width */
+        height: 0.6rem; /* Reduced height */
         border-radius: 50%;
-        background: ${(props) => props.indicator};
+        background: var(--color-green); /* Bright green */
       }
     }
 
@@ -171,13 +173,14 @@ const IncomeItemStyled = styled.div`
       .text {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem; /* Reduced gap */
         p {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          color: var(--primary-color);
+          gap: 0.3rem; /* Reduced gap */
+          color: var(--color-grey); /* Earthy grey */
           opacity: 0.8;
+          font-size: 0.8rem; /* Reduced font size */
         }
       }
     }

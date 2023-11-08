@@ -16,7 +16,8 @@ function Income() {
       <InnerLayout>
         <h1>Incomes</h1>
         <h2 className="total-income">
-          Total Earnings: <span>₱{totalIncome()}</span>
+          Total Earnings:{" "}
+          <span style={{ color: "green" }}> + ₱{totalIncome()}</span>
         </h2>
         <div className="income-content">
           <div className="form-container">
@@ -51,27 +52,31 @@ function Income() {
 const IncomeStyled = styled.div`
   display: flex;
   overflow: auto;
+
   .total-income {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fcf6f9;
-    border: 2px solid #ffffff;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-    border-radius: 20px;
-    padding: 1rem;
-    margin: 1rem 0;
-    font-size: 2rem;
-    gap: 0.5rem;
+    border: 1px solid #ffffff; /* Reduced border thickness */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.06); /* Reduced box shadow */
+    border-radius: 10px; /* Reduced border radius */
+    padding: 0.5rem; /* Reduced padding */
+    margin: 0.5rem 0; /* Reduced margin */
+    font-size: 1.5rem; /* Reduced font size */
+    gap: 0.3rem; /* Reduced gap */
+
     span {
-      font-size: 2.5rem;
-      font-weight: 800;
+      font-size: 2rem; /* Reduced font size */
+      font-weight: 600; /* Adjusted font weight */
       color: var(--color-green);
     }
   }
+
   .income-content {
     display: flex;
-    gap: 2rem;
+    gap: 1rem; /* Reduced gap */
+
     .incomes {
       flex: 1;
     }
