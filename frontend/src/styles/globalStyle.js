@@ -9,28 +9,26 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root{
-        --primary-color: #222260;
-        --primary-color2: 'color: rgba(34, 34, 96, .6)';
-        --primary-color3: 'color: rgba(34, 34, 96, .4)';
-        --color-green: #42AD00;
-        --color-grey: #aaa;
-        --color-accent: #F56692;
-        --color-delete: #FF0000;
+        --primary-color: #614F38; /* Earthy brown color */
+        --color-green: #42874F; /* Earthy green color */
+        --color-grey: #8D8D8D; /* Earthy grey color */
+        --color-accent: #A46464; /* Earthy red color */
+        --color-delete: #f22727; /* Darker red color */
     }
 
     body{
         font-family: 'Nunito', sans-serif;
-        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        font-size: clamp(0.8rem, 1.2vw, 1rem); /* Smaller font size */
         overflow: hidden;
-        color: rgba(34, 34, 96, .6);
+        color: var(--color-grey); /* Earthy grey color */
     }
 
     h1, h2, h3, h4, h5, h6{
-        color: var(--primary-color);
+        color: var(--primary-color); /* Earthy brown color */
     }
 
     .error{
-        color: red;
+        color: var(--color-delete); /* Darker red color */
         animation: shake 0.5s ease-in-out;
         @keyframes shake {
             0%{

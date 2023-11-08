@@ -5,8 +5,8 @@ import { useState } from "react";
 import Dashboard from "./components/dashboard/Dashboard";
 import Income from "./components/income/Income";
 import Expenses from "./components/expenses/Expenses";
+import Profile from "./components/profile/Profile";
 import { useGlobalContext } from "./context/globalContext";
-import History from "./components/history/History";
 
 function App() {
   const [active, setActive] = useState(1);
@@ -18,14 +18,12 @@ function App() {
     switch (active) {
       case 1:
         return <Dashboard />;
-      // case 2:
-      //   return <History />;
       case 3:
         return <Income />;
       case 4:
         return <Expenses />;
-      // case 5:
-      //   return <Options />;
+      case 5:
+        return <Profile />;
       default:
         return <Dashboard />;
     }
@@ -48,9 +46,9 @@ const AppStyled = styled.div`
   main {
     flex: 1;
     background: rgba(252, 246, 249, 0.78);
-    border: 3px solid #ffffff;
+    border: 1px solid #ffffff;
     backdrop-filter: blur(4.5px);
-    border-radius: 32px;
+    border-radius: 20px;
     overflow-x: hidden;
     &::-webkit-scrollbar {
       width: 0;
