@@ -7,12 +7,12 @@ export const menuItems = [
     icon: dashboard,
     link: "/dashboard",
   },
-  {
-    id: 2,
-    title: "History",
-    icon: transactions,
-    link: "/transactions",
-  },
+  // {
+  //   id: 2,
+  //   title: "History",
+  //   icon: transactions,
+  //   link: "/transactions",
+  // },
   {
     id: 3,
     title: "Earnings",
