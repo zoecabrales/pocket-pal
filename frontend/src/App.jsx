@@ -5,7 +5,6 @@ import { useState } from "react";
 import Dashboard from "./components/dashboard/Dashboard";
 import Income from "./components/income/Income";
 import Expenses from "./components/expenses/Expenses";
-import Options from "./components/options/Options";
 import { useGlobalContext } from "./context/globalContext";
 
 function App() {
@@ -24,8 +23,8 @@ function App() {
         return <Income />;
       case 4:
         return <Expenses />;
-      case 5:
-        return <Options />;
+      // case 5:
+      //   return <Options />;
       default:
         return <Dashboard />;
     }

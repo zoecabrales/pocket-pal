@@ -30,7 +30,7 @@ function IncomeItem({
   indicatorColor,
   type,
 }) {
-  const categoryIcon = () => {
+  const categoryIcon = (category) => {
     switch (category) {
       case "salary":
         return money;
@@ -43,7 +43,7 @@ function IncomeItem({
     }
   };
 
-  const expenseCatIcon = () => {
+  const expenseCatIcon = (category) => {
     switch (category) {
       case "education":
         return book;
@@ -66,14 +66,14 @@ function IncomeItem({
     }
   };
 
+  console.log("type", type);
+
   const handleDeleteItem = () => {
-    // Show a confirmation pop-up
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this item?"
     );
 
     if (confirmDelete) {
-      // If the user confirms, call the deleteItem function
       deleteItem(id);
     }
   };
@@ -81,7 +81,7 @@ function IncomeItem({
   return (
     <IncomeItemStyled indicator={indicatorColor}>
       <div className="icon">
-        {type === "expense" ? expenseCatIcon() : categoryIcon()}
+        {type === "income" ? categoryIcon(category) : expenseCatIcon(category)}
       </div>
       <div className="content">
         <h5>{title}</h5>
@@ -98,12 +98,12 @@ function IncomeItem({
               {description}
             </p>
           </div>
-          <div>
+          <div className="btn-con">
             <Button
               icon={trash}
-              bPad={".8rem"}
+              bPad={"1rem"}
               bRad={"50%"}
-              bg={"var(--color-delete"}
+              bg={"var(--primary-color"}
               color={"#fff"}
               iColor={"#fff"}
               hColor={"var(--color-green)"}
@@ -129,7 +129,7 @@ const IncomeItemStyled = styled.div`
   width: 100%;
   color: #222260;
   .icon {
-    width: 90px;
+    width: 80px;
     height: 80px;
     border-radius: 20px;
     background: #f5f5f5;
@@ -137,7 +137,6 @@ const IncomeItemStyled = styled.div`
     align-items: center;
     justify-content: center;
     border: 2px solid #ffffff;
-    gap: 0.2rem;
     i {
       font-size: 2.6rem;
     }

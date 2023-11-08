@@ -3,7 +3,7 @@
 import { styled } from "styled-components";
 import avatar from "../../assets/img/avatar.jpg";
 import { menuItems } from "../../utils/menuItems";
-import { signout } from "../../utils/icons";
+import { signout } from "../../utils/Icons";
 
 function Navigation({ active, setActive }) {
   return (
